@@ -41,5 +41,8 @@ app.use('/api/ai', require('./routes/ai'));
 // ======= Start Server =======
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.get('/', (req, res) => {
+  res.send('Mini CRM Platform Backend is running!');
+});
 
 module.exports = app;
