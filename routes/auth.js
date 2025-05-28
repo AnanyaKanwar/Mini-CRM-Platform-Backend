@@ -26,6 +26,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 
+
 require('../utils/passport'); // Google strategy
 
 // Start Google OAuth
@@ -42,5 +43,7 @@ router.get(
     res.redirect(`${frontendURL}/login?token=${token}`);
   }
 );
+module.exports = router;
+
 
 

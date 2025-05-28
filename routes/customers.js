@@ -3,6 +3,7 @@ const Customer = require('../models/Customer');
 const auth = require('../middleware/auth');
 const router = express.Router();
 
+
 router.post('/', auth, async (req, res) => {
   try {
     const customer = await Customer.create(req.body);
