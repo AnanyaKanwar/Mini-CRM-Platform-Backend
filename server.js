@@ -12,7 +12,10 @@ const session = require('express-session');
 const app = express();
 
 // ======= Middleware =======
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  credentials: true,
+}));
 app.use(express.json());
 
 // ======= Session & Passport Setup =======
@@ -38,9 +41,7 @@ app.use('/api/communication-logs', require('./routes/communicationLogs'));
 app.use('/api/delivery-receipt', require('./routes/deliveryReceipt'));
 app.use('/api/ai', require('./routes/ai')); 
 
-// ======= Start Server =======
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// ======= Root Route =======
 app.get('/', (req, res) => {
   res.send('Mini CRM Platform Backend is running!');
 });
