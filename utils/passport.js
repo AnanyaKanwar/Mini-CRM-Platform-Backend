@@ -46,3 +46,5 @@ async (accessToken, refreshToken, profile, done) => {
     return done(error, null);
   }
 }));
+passport.serializeUser((user, done) => done(null, user.id));
+passport.deserializeUser((id, done) => User.findById(id).then(user => done(null, user)));
