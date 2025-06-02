@@ -45,3 +45,29 @@ INTERNAL_API_KEY=your_internal_api_key
 
 4. Start the server:
    npm start/ run dev
+
+
+🛣️ API Endpoints
+
+- `/api/auth` – Authentication (Google OAuth)
+- `/api/customers` – Customer CRUD
+- `/api/orders` – Order CRUD
+- `/api/campaigns` – Campaign creation, listing, and delivery
+- `/api/communication-logs` – Delivery logs
+- `/api/delivery-receipt` – Update delivery status
+- `/api/ai` – AI-powered message suggestions
+- `/api/analytics` – Analytics endpoints
+
+🧪 Testing
+- Use [Postman](https://www.postman.com/) to test API endpoints.
+
+ 📝 Notes
+- Ensure MongoDB is running and accessible.
+- For Google OAuth, set up your credentials in the Google Developer Console.
+- The backend is CORS-enabled for the frontend URL defined in `.env`.
+
+
+
+
+
+
