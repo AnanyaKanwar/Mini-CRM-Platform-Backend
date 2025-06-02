@@ -5,7 +5,8 @@ const User = require('../models/User');
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://minicrmbackend.vercel.app/api/auth/google/callback"
+  callbackURL: "https://minicrmbackend.vercel.app/api/auth/google/callback",
+  passReqToCallback: true
 },
 async (accessToken, refreshToken, profile, done) => {
   let user = await User.findOne({ googleId: profile.id });
