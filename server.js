@@ -86,7 +86,7 @@ const app = express();
 
 // ======= Middleware =======
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: 'https://mini-crm-platform-frontend-psi.vercel.app',
   credentials: true,
 }));
 app.use(express.json());
